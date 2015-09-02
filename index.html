@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>:: Taxisecu ::</title>
+<link href="font-awesome-4.3.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+<link href="font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<link href="jquery-mobile/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<link href="bootstrap.css" rel="stylesheet" media="screen">
+<script src="jquery-mobile/jquery.min.js"></script>
+<script src="jquery-mobile/bootstrap.min.js"></script>
+<script type="text/javascript" src="jquery-mobile/script.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var jSOnFile = "http://74.208.125.76/TaxiSecuWebSerIOS/TaxiSecuWebService.asmx/GAC";
+            var jObj = $.getJSON(jSOnFile, function (data) {
+                for (var i in data.CountryMaster) {
+                    alert(data.CountryMaster);
+                    $("#ddlCountry").append("<option value='" + data.CountryMaster[i].CNT_Code + "'>" + data.CountryMaster[i].CountryName + "</option>");
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+<!--Start of the Welcome of the Texisecu -->
+<div data-role="page" id="page">
+  <div data-role="header">
+    <div class="container">
+      <div align="center">
+        <div class="logo"> <a href="#page2"> <img src="images/logo.png" width="150" height="150"></a> </div>
+        <div class="container">
+          <div align="center">
+            <div class="welcome"> Welcome To TaxiSecu ! </div>
+            <div class="welcome_one">Keep Your Travel by Taxisecu!</div>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div data-role="content">
+    <div align="center"> <a href="#page2">
+      <div class="contant_home">CONTINUE</div>
+      </a> </div>
+  </div>
+</div>
+<!--End of the Welcome of the Texisecu -->
+<!--Start of the Register yourself -->
+<div data-role="page" id="page2">
+  <div data-role="header"> 
+     <div align="center">
+      <div class="logo" style="margin-top:0px; margin-bottom:8px;"><a href="#page2"><img src="images/logo.png" width="150" height="150"></a> </div>
+    </div>
+  </div>
+  <div data-role="content">
+  
+    <div class="container">
+      <div align="center">
+        <div class="welcome"> Register Yourself </div>
+      </div>
+       <form method="post">
+        <div class="container">
+        <div class="elemt-inpt">
+            <select id="ddlCountry" class="country">
+              <option value="0">Select Country</option>
+            </select>
+          </div>
+          
+          <div class="mob_txt">
+          <input type="text" name="textinput" id="textinput" placeholder="+91" value="" required class="text_area"/>
+          </div>
+          <div class="mob_txtr">
+          <input type="text" name="textinput" id="textinput" placeholder="Enter Mobile No." value="" required class="text_area"/>
+          </div>
+         </div>
+      
+        <div class="contant">
+        <button type="submit" class="prfil-btn" >CONTINUE</button>
+        
+        </div>
+      </form>
+      
+    </div>
+    
+  </div>
+    </div>
+
+
+<!--Start of the Register yourself -->
+
+<!-- Start Enter your Security code -->
+<div data-role="page" id="page3">
+  <div data-role="header">
+    <div align="center">
+      <div class="logo" style="margin-top:0px; margin-bottom:8px;"> <a href="#page2"> <img src="images/logo.png" width="150;" height="150px;"></a> </div>
+    </div>
+  </div>
+  <div data-role="content">
+     <form method="post">
+    <div class="container">
+      <div align="center">
+        <div class="welcome"style="margin-bottom:15px;"> Enter your Security code </div>
+      </div>
+      <div class="container">
+        <div align="center">
+          <input type="text" name="textinput" id="textinput" placeholder="Security code" value="" required class="text_area"/>        </div>
+        <div class="contant">
+        <button type="submit" class="prfil-btn" >CONTINUE</button>
+        
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+<!-- End  Security code --> 
+
+<!-- Manage Profile User ID -->
+<div data-role="page" id="page4">
+<div class="pageh">
+    <img src="logo.png">
+        </div>
+ 
+  <div data-role="content">
+   <form method="post">
+       <div class="container">
+        <div align="center">
+
+          <div class="logo" style="margin-top:50px;"> <img src="images/profile.png" width="120" height="120"> </div>
+          <div class="welcome"> Welcome, 918802989146 </div>
+
+          <input type="text" name="textinput" id="text_mpui_fn" placeholder="Enter First Name" value="" required class="text_area"/>
+         <input type="text" name="textinput" id="text_mpui_ln" placeholder="Enter Last Name" value="" required class="text_area"/>
+<input type="text" name="textinput" id="text_mpui_ei" placeholder="Enter Email" value="" required class="text_area"/>
+        </div>
+        <div class="contant">
+        <button type="submit" class="prfil-btn" >SAVE PROFILE</button>
+        
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- End Manage Profile User ID --> 
+
+<!-- taxi information -->
+<div data-role="page" id="page5">
+<div class="pageh">
+    <img src="logo.png">
+        </div>
+   <div data-role="content">
+    <form method="post">
+    <div class="container">
+        <div align="center">
+
+          <div class="logo" style="margin-top:50px;"> <img src="images/profile.png" width="120" height="120"> </div>
+          <div class="welcome"> Welcome, 918802989146 </div>
+          <input type="text" name="textinput" id="text_mpui_fn" placeholder="Taxi No..." value="" required class="text_area"/>
+     	
+        </div>
+        <div class="contant">
+        <button type="submit" class="prfil-btn" >START RIDE</button>
+        
+        </div>
+    </div>
+    </form>
+    <nav class="navbar navbar-default navbar-fixed-bottom" style="background-color: #000;">
+	<div data-role="footer">
+    
+	   <div class="navbar-header page-scroll">
+
+                    <a class="navbar-brand page-scroll" href="#page10" style="margin-left: auto; margin-right: auto">
+                        <img src="images/user-col1.png" />	</a>
+                    <a class="navbar-brand page-scroll" href="#page8" style="margin-left: auto; margin-right: auto">
+                        <img src="images/w_activity.png" /></a>
+                    <a class="navbar-brand page-scroll" href="#page6" style="margin-left: auto; margin-right: auto">
+                        <img src="images/taxi1.png" /></a>
+                    <a class="navbar-brand page-scroll" href="#page13" style="margin-left: auto; margin-right: auto">
+                        <img src="images/setting1.png" /></a>
+                </div>
+	</div></nav>
+  </div>
+</div>
+<!-- End Change Password --> 
+<!-- Add Friends User ID -->
+<div data-role="page" id="page6">
+<div class="pageh">
+    <img src="logo.png">
+        </div>
+   <div data-role="content">
+    <form method="post">
+    <div class="container">
+        <div align="center">
+
+          <div class="logo" style="margin-top:50px;"> <img src="images/profile.png" width="120" height="120"> </div>
+          <div class="welcome"> Welcome, 918802989146 </div>
+          <input type="text" name="textinput" id="text_mpui_fn" placeholder="HR 51 X 0954" value="" required class="text_area"/>
+          <input type="text" name="textinput" id="text_mpui_fn" placeholder="Riding from last 2:15 hours" value="" required class="text_area"/>
+     	<div class="welcome_profile">Verification :  SMS Send to <a href="#" class="fav_color">Favorites</a></div>
+        </div>
+        <div class="contant_finish">
+        <button type="submit" class="prfil-btn" >FINISH RIDE</button>
+        
+        </div>
+    </div>
+    </form>
+    <nav class="navbar navbar-default navbar-fixed-bottom" style="background-color: #000;">
+	<div data-role="footer">
+    
+	   <div class="navbar-header page-scroll">
+
+                    <a class="navbar-brand page-scroll" href="#page10" style="margin-left: auto; margin-right: auto">
+                        <img src="images/user-col2.png" />	</a>
+                    <a class="navbar-brand page-scroll" href="#page8" style="margin-left: auto; margin-right: auto">
+                        <img src="images/w_activity.png" /></a>
+                    <a class="navbar-brand page-scroll" href="#page6" style="margin-left: auto; margin-right: auto">
+                        <img src="images/taxi1.png" /></a>
+                    <a class="navbar-brand page-scroll" href="#page13" style="margin-left: auto; margin-right: auto">
+                        <img src="images/setting1.png" /></a>
+                </div>
+	</div></nav>
+  </div>
+</div>
+<!-- End Add Friends User ID --> 
+
+
+<div data-role="page" id="page7">
+<div class="pageh">
+    <img src="logo.png">
+        </div>
+   <div data-role="content">
+    <form method="post">
+    <div class="container">
+      <div align="center">
+
+          <div class="logo" style="margin-top:50px;"> <img src="images/profile.png" width="120" height="120"> </div>
+          <div class="welcome"> Like to Rate Ride </div>
+     
+<div class="mob_radio">
+
+<input name="Average" type="radio" value="" checked>
+
+
+</div>
+   
+
+   
+        <div class="contant">
+        <button type="submit" class="prfil-btn" >CONTIUNE</button>
+        
+        </div>
+    </div>
+    </form>
+    <nav class="navbar navbar-default navbar-fixed-bottom" style="background-color: #000;">
+	<div data-role="footer">
+    
+	   <div class="navbar-header page-scroll">
+
+                    <a class="navbar-brand page-scroll" href="#page10" style="margin-left: auto; margin-right: auto">
+                        <img src="images/user-col1.png" />	</a>
+                    <a class="navbar-brand page-scroll" href="#page8" style="margin-left: auto; margin-right: auto">
+                        <img src="images/w_activity.png" /></a>
+                    <a class="navbar-brand page-scroll" href="#page6" style="margin-left: auto; margin-right: auto">
+                        <img src="images/taxi1.png" /></a>
+                    <a class="navbar-brand page-scroll" href="#page13" style="margin-left: auto; margin-right: auto">
+                        <img src="images/setting1.png" /></a>
+                </div>
+	</div></nav>
+  </div>
+</div>
+</body>
+</html>
